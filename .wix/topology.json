@@ -1,0 +1,11 @@
+{
+  "production": {
+    "id": "fe3b4d6b-a7cc-4eb7-b917-c23f544112df",
+    "site": {
+      "main": "https://rxar4z-fly-gym-as-4d5fc1fd-igorsanea.wix-site-host.com"
+    },
+    "dashboard": {
+      "main": "https://manage.wix.com/dashboard/ce0eca9c-b7ce-42b7-8d61-10f46346425a?apps-override=fe3b4d6b-a7cc-4eb7-b917-c23f544112df"
+    }
+  }
+}
