@@ -17,7 +17,7 @@ const FLYGYM_ZOHO_MEDICAL_FORM_EMBED_URL = "https://creatorapp.zohopublic.eu/inf
     zc_Header: 'false', zc_BgClr: '_101016', zc_BdrClr: '_101016',
     zc_LblFont: 'Arial', zc_LblFontClr: '_f5f5f7', zc_LblFontSize: '15px',
     zc_InpClr: '_20202a', zc_InpFieldFont: 'Arial', zc_InpFieldFontClr: '_ffffff',
-    zc_InpFieldFontSize: '16px', zc_InpFieldHeight: '44px',
+    zc_InpFieldFontSize: '16px', zc_InpFieldHeight: '44px', zc_TextAreaHeight: '44px',
     zc_FtrClr: '_101016', zc_BtnBgClr: '_ff6f1d', zc_BtnClr: '_101016',
     zc_BtnFont: 'Arial', zc_BtnFontSize: '14px',
     zc_BtnMovrBgClr: '_ff8e4d', zc_BtnMovrClr: '_101016',
@@ -27,7 +27,7 @@ const FLYGYM_ZOHO_MEDICAL_FORM_EMBED_URL = "https://creatorapp.zohopublic.eu/inf
   if (frame.clientWidth < 600) Object.assign(appearance, {
     zc_LblWidth: '110px', zc_LblFontSize: '13px',
     zc_InpWidth: fieldWidth, zc_InpFieldWidth: fieldWidth,
-    zc_TextAreaWidth: fieldWidth, zc_TextAreaHeight: '56px',
+    zc_TextAreaWidth: fieldWidth,
     zc_DateWidth: fieldWidth, zc_DropDownWidth: fieldWidth
   });
   Object.entries(appearance).forEach(([key, value]) => url.searchParams.set(key, value));
