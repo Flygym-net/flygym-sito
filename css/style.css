@@ -2457,3 +2457,32 @@ body {
         transition: none;
       }
     }
+
+    /* Home: accesso unificato a rinnovi, iscrizioni e prove. */
+    .fg-hero .fg-actions {
+      align-items: flex-start;
+    }
+
+    .fg-start-action {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .fg-start-action .fg-button {
+      align-self: flex-start;
+    }
+
+    .fg-start-action p {
+      margin: 0;
+      color: #d0d0d8;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+      .fg-hero .fg-start-action,
+      .fg-start-action .fg-button {
+        width: 100%;
+      }
+    }

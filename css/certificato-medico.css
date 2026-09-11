@@ -1,0 +1,311 @@
+.fg-medical-page {
+  background: #050508;
+  color: var(--white);
+}
+
+.fg-medical-hero {
+  position: relative;
+  display: flex;
+  min-height: 650px;
+  align-items: end;
+  overflow: hidden;
+  padding: 160px 0 96px;
+  background:
+    radial-gradient(circle at 80% 10%, rgba(223, 34, 123, .28), transparent 34%),
+    radial-gradient(circle at 10% 75%, rgba(255, 111, 29, .18), transparent 31%),
+    #08080d;
+}
+
+.fg-medical-hero::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(120deg, transparent 45%, rgba(255, 255, 255, .035));
+}
+
+.fg-medical-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.fg-medical-hero h1 {
+  max-width: 900px;
+  margin: 24px 0 0;
+  font-size: clamp(52px, 9vw, 112px);
+  line-height: .9;
+  letter-spacing: -.055em;
+}
+
+.fg-medical-hero .fg-course-lead {
+  max-width: 760px;
+  margin-top: 28px;
+  color: rgba(255, 255, 255, .78);
+  font-size: clamp(18px, 2.4vw, 24px);
+  line-height: 1.55;
+}
+
+.fg-medical-hero .fg-actions {
+  margin-top: 34px;
+}
+
+.fg-medical-intro,
+.fg-medical-download {
+  background: #0a0a10;
+}
+
+.fg-medical-steps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 52px;
+}
+
+.fg-medical-steps article,
+.fg-medical-centre {
+  padding: 34px;
+  border: 1px solid rgba(255, 255, 255, .11);
+  border-radius: 28px;
+  background: linear-gradient(150deg, rgba(255, 255, 255, .075), rgba(255, 255, 255, .025));
+}
+
+.fg-medical-steps article > span {
+  display: inline-grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--pink), var(--orange));
+  font-weight: 900;
+}
+
+.fg-medical-steps h3 {
+  margin: 28px 0 10px;
+  font-size: 25px;
+  letter-spacing: -.025em;
+}
+
+.fg-medical-steps p,
+.fg-medical-centre p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.fg-medical-upload,
+.fg-medical-reminder {
+  background: #050508;
+}
+
+.fg-medical-upload-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr);
+  gap: 42px;
+  align-items: start;
+}
+
+.fg-medical-checklist {
+  display: grid;
+  gap: 12px;
+  margin: 34px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fg-medical-checklist li {
+  position: relative;
+  padding-left: 34px;
+  color: rgba(255, 255, 255, .82);
+}
+
+.fg-medical-checklist li::before {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  display: grid;
+  width: 22px;
+  height: 22px;
+  place-items: center;
+  content: "✓";
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .1);
+  color: var(--orange);
+  font-weight: 900;
+}
+
+.fg-medical-form-shell {
+  overflow: hidden;
+  border: 1px solid rgba(255, 111, 29, .35);
+  border-radius: 28px;
+  background: #101016;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, .3);
+}
+
+.fg-medical-form-heading {
+  padding: 30px 30px 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+  background: radial-gradient(ellipse at top right, rgba(223, 34, 123, .15), transparent 70%);
+}
+
+.fg-medical-form-heading h3 {
+  margin: 12px 0;
+  font-size: clamp(26px, 3vw, 36px);
+  letter-spacing: -.035em;
+}
+
+.fg-medical-form-heading p,
+.fg-medical-form-placeholder p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.fg-medical-form-placeholder {
+  display: flex;
+  min-height: 520px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  text-align: center;
+}
+
+.fg-medical-form-placeholder[hidden] {
+  display: none;
+}
+
+.fg-medical-form-icon {
+  display: grid;
+  width: 74px;
+  height: 74px;
+  place-items: center;
+  border-radius: 24px;
+  background: linear-gradient(135deg, var(--pink), var(--orange));
+  color: #fff;
+  font-size: 48px;
+  line-height: 1;
+}
+
+.fg-medical-form-placeholder h3 {
+  margin: 24px 0 10px;
+  font-size: 28px;
+}
+
+.fg-medical-zoho-frame {
+  display: block;
+  width: 100%;
+  height: 660px;
+  min-height: 660px;
+  border: 0;
+  background: #101016;
+}
+
+.fg-medical-download-grid {
+  display: block;
+  max-width: 900px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.fg-medical-download .fg-actions {
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.fg-medical-reminder {
+  background: radial-gradient(circle at 70% 30%, rgba(255, 111, 29, .17), transparent 35%), #050508;
+}
+
+.fg-medical-centres {
+  background: #0a0a10;
+}
+
+.fg-medical-centres-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 42px;
+}
+
+.fg-medical-centre h3 {
+  margin: 18px 0 8px;
+  font-size: 28px;
+  letter-spacing: -.03em;
+}
+
+.fg-medical-centre p {
+  margin-bottom: 24px;
+}
+
+.fg-medical-contact {
+  display: block;
+  overflow-wrap: anywhere;
+  color: #fff;
+  font-size: clamp(17px, 2vw, 24px);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.fg-medical-contact span {
+  display: block;
+  margin-top: 12px;
+  color: var(--orange);
+  font-size: 14px;
+}
+
+.fg-medical-contact:hover {
+  color: var(--orange);
+}
+
+@media (max-width: 1000px) {
+  .fg-medical-upload-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .fg-medical-steps,
+  .fg-medical-centres-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .fg-medical-hero {
+    min-height: 610px;
+    padding: 142px 0 72px;
+  }
+
+  .fg-medical-hero h1 {
+    font-size: clamp(48px, 18vw, 76px);
+  }
+
+  .fg-medical-hero .fg-actions,
+  .fg-medical-hero .fg-button {
+    width: 100%;
+  }
+
+  .fg-medical-form-shell {
+    width: 100%;
+    margin-left: 0;
+    border-radius: 22px;
+  }
+
+  .fg-medical-form-heading {
+    padding: 26px 20px 20px;
+  }
+
+  .fg-medical-form-placeholder {
+    min-height: 520px;
+    padding: 30px 18px;
+  }
+
+  .fg-medical-zoho-frame {
+    height: 850px;
+    min-height: 850px;
+  }
+
+  .fg-medical-centre {
+    padding: 26px;
+  }
+}
