@@ -1,6 +1,37 @@
 const toggle = document.getElementById("fgMenuToggle");
     const menu = document.getElementById("fgMenu");
 
+    const athletesCount = document.getElementById("fg-athletes-count");
+    const activeCoursesCount = document.getElementById("fg-active-courses-count");
+
+    if (athletesCount && activeCoursesCount) {
+      fetch("/api/statistiche-flygym", {
+        headers: { Accept: "application/json" },
+      })
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error("Statistiche non disponibili");
+          }
+
+          return response.json();
+        })
+        .then(function (stats) {
+          const athletes = Number(stats.atleti);
+          const activeCourses = Number(stats.corsi_attivi);
+
+          if (Number.isInteger(athletes) && athletes >= 0) {
+            athletesCount.textContent = athletes.toLocaleString("it-IT");
+          }
+
+          if (Number.isInteger(activeCourses) && activeCourses >= 0) {
+            activeCoursesCount.textContent = activeCourses.toLocaleString("it-IT");
+          }
+        })
+        .catch(function () {
+          // I valori presenti nell'HTML restano visibili se Zoho non risponde.
+        });
+    }
+
     toggle.addEventListener("click", function () {
       const isOpen = menu.classList.toggle("fg-open");
       toggle.setAttribute("aria-expanded", String(isOpen));
