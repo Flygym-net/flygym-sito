@@ -1047,3 +1047,20 @@ body {
     transform: scale(1);
   }
 }
+
+/* Le immagini delle card devono coprire sempre tutta l'altezza disponibile.
+   Questo override evita che la regola responsive generale height:auto lasci
+   una fascia scura sotto la foto. */
+#flygym-home .fg-card-image {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 600px) {
+  #flygym-home .fg-card-image,
+  #flygym-home .fg-card:hover .fg-card-image {
+    transform: scale(1.08);
+  }
+}
