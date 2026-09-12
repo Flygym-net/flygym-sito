@@ -1,12 +1,16 @@
 const toggle = document.getElementById("fgMenuToggle");
     const menu = document.getElementById("fgMenu");
 
-    const autoplayVideos = document.querySelectorAll(".fg-course-hero-video[autoplay]");
+    const autoplayVideos = document.querySelectorAll(
+      ".fg-course-hero-video[autoplay], .fg-home-hero-video[autoplay]"
+    );
 
     autoplayVideos.forEach(function (video) {
       video.muted = true;
       video.defaultMuted = true;
       video.playsInline = true;
+      video.autoplay = true;
+      video.loop = true;
       video.setAttribute("muted", "");
       video.setAttribute("playsinline", "");
       video.setAttribute("webkit-playsinline", "");
@@ -23,15 +27,18 @@ const toggle = document.getElementById("fgMenuToggle");
       }
 
       startVideo();
+      video.addEventListener("loadedmetadata", startVideo, { once: true });
+      video.addEventListener("loadeddata", startVideo, { once: true });
       video.addEventListener("canplay", startVideo, { once: true });
       window.addEventListener("pageshow", startVideo);
+      window.addEventListener("focus", startVideo);
       document.addEventListener("visibilitychange", function () {
         if (!document.hidden) {
           startVideo();
         }
       });
 
-      ["touchstart", "pointerdown", "keydown"].forEach(function (eventName) {
+      ["touchstart", "pointerdown", "keydown", "scroll"].forEach(function (eventName) {
         document.addEventListener(eventName, startVideo, { once: true, passive: true });
       });
     });
