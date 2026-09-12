@@ -194,8 +194,8 @@
 .fg-medical-zoho-frame {
   display: block;
   width: 100%;
-  height: 660px;
-  min-height: 660px;
+  height: 820px;
+  min-height: 820px;
   border: 0;
   background: #101016;
 }
@@ -301,8 +301,8 @@
   }
 
   .fg-medical-zoho-frame {
-    height: 850px;
-    min-height: 850px;
+    height: 940px;
+    min-height: 940px;
   }
 
   .fg-medical-centre {
