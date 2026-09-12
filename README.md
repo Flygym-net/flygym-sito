@@ -11,4 +11,4 @@ Prima di ogni pubblicazione, conservare le modifiche già presenti nella home e 
 
 ## Video hero home
 
-Dal 12 settembre 2026 la home usa `video/ginnastica-artistica-hero-web.mp4`, la versione ottimizzata e predisposta per lo streaming. L'autoplay mobile richiede `autoplay`, `muted`, `playsinline`, `webkit-playsinline` e `preload="auto"`; `js/app.js` riprova inoltre l'avvio al caricamento, al ritorno sulla pagina e alla prima interazione. Verifica online eseguita: video non in pausa, silenzioso, pronto e con avanzamento regolare.
+Dal 12 settembre 2026 la home usa `video/ginnastica-artistica-hero-web.mp4`, la versione ottimizzata e predisposta per lo streaming. L'autoplay mobile richiede `autoplay`, `muted`, `playsinline`, `webkit-playsinline` e `preload="auto"`; `js/app.js` forza il caricamento, riprova l'avvio nei primi sei secondi e mantiene lo sblocco su tocco/click finché la riproduzione non è realmente iniziata. Verifica online eseguita: video non in pausa, silenzioso, pronto e con avanzamento regolare.
