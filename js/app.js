@@ -16,6 +16,10 @@ const toggle = document.getElementById("fgMenuToggle");
       video.setAttribute("webkit-playsinline", "");
       video.removeAttribute("controls");
 
+      if (video.readyState === 0) {
+        video.load();
+      }
+
       function startVideo() {
         const playback = video.play();
 
@@ -27,6 +31,17 @@ const toggle = document.getElementById("fgMenuToggle");
       }
 
       startVideo();
+
+      let automaticAttempts = 0;
+      const automaticRetry = window.setInterval(function () {
+        automaticAttempts += 1;
+        startVideo();
+
+        if (!video.paused || automaticAttempts >= 12) {
+          window.clearInterval(automaticRetry);
+        }
+      }, 500);
+
       video.addEventListener("loadedmetadata", startVideo, { once: true });
       video.addEventListener("loadeddata", startVideo, { once: true });
       video.addEventListener("canplay", startVideo, { once: true });
@@ -38,9 +53,23 @@ const toggle = document.getElementById("fgMenuToggle");
         }
       });
 
-      ["touchstart", "pointerdown", "keydown", "scroll"].forEach(function (eventName) {
-        document.addEventListener(eventName, startVideo, { once: true, passive: true });
+      const unlockEvents = ["touchstart", "touchend", "pointerdown", "click", "keydown", "scroll"];
+
+      function unlockVideo() {
+        startVideo();
+      }
+
+      function removeUnlockListeners() {
+        unlockEvents.forEach(function (eventName) {
+          document.removeEventListener(eventName, unlockVideo);
+        });
+      }
+
+      unlockEvents.forEach(function (eventName) {
+        document.addEventListener(eventName, unlockVideo, { passive: true });
       });
+
+      video.addEventListener("playing", removeUnlockListeners, { once: true });
     });
 
     const athletesCount = document.getElementById("fg-athletes-count");
