@@ -1,6 +1,41 @@
 const toggle = document.getElementById("fgMenuToggle");
     const menu = document.getElementById("fgMenu");
 
+    const autoplayVideos = document.querySelectorAll(".fg-course-hero-video[autoplay]");
+
+    autoplayVideos.forEach(function (video) {
+      video.muted = true;
+      video.defaultMuted = true;
+      video.playsInline = true;
+      video.setAttribute("muted", "");
+      video.setAttribute("playsinline", "");
+      video.setAttribute("webkit-playsinline", "");
+      video.removeAttribute("controls");
+
+      function startVideo() {
+        const playback = video.play();
+
+        if (playback && typeof playback.catch === "function") {
+          playback.catch(function () {
+            // Alcuni browser mobili riprovano dopo la prima interazione.
+          });
+        }
+      }
+
+      startVideo();
+      video.addEventListener("canplay", startVideo, { once: true });
+      window.addEventListener("pageshow", startVideo);
+      document.addEventListener("visibilitychange", function () {
+        if (!document.hidden) {
+          startVideo();
+        }
+      });
+
+      ["touchstart", "pointerdown", "keydown"].forEach(function (eventName) {
+        document.addEventListener(eventName, startVideo, { once: true, passive: true });
+      });
+    });
+
     const athletesCount = document.getElementById("fg-athletes-count");
     const activeCoursesCount = document.getElementById("fg-active-courses-count");
 
