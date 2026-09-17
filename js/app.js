@@ -76,7 +76,8 @@ const toggle = document.getElementById("fgMenuToggle");
     const activeCoursesCount = document.getElementById("fg-active-courses-count");
 
     if (athletesCount && activeCoursesCount) {
-      fetch("/api/statistiche-flygym", {
+      // Numeri letti dall'app FlyGym, che ha sostituito Zoho: il sito su Render non ha un server proprio.
+      fetch("https://flygym-app.onrender.com/api/public/statistiche-flygym", {
         headers: { Accept: "application/json" },
       })
         .then(function (response) {
