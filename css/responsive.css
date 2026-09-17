@@ -387,14 +387,14 @@ body {
     width: 100%;
   }
 
-  .fg-zoho-dialog {
+  .fg-requests-dialog {
     width: calc(100% - 12px);
     height: calc(100vh - 12px);
     max-height: calc(100vh - 12px);
     border-radius: 18px;
   }
 
-  .fg-zoho-dialog-shell {
+  .fg-requests-dialog-shell {
     padding-top: 54px;
   }
 

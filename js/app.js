@@ -294,36 +294,65 @@ const toggle = document.getElementById("fgMenuToggle");
     const bookingLinks = document.querySelectorAll('a[href="prova-gratuita/index.html"]');
 
     if (bookingLinks.length) {
-      const zohoDialog = document.createElement("dialog");
-      zohoDialog.className = "fg-zoho-dialog";
-      zohoDialog.setAttribute("aria-label", "Modulo per prenotare una prova gratuita");
-      zohoDialog.innerHTML = '<div class="fg-zoho-dialog-shell"><button class="fg-zoho-dialog-close" type="button" aria-label="Chiudi il modulo">×</button><iframe src="prova-gratuita/index.html" title="Prenota una prova gratuita Fly Gym" loading="lazy"></iframe></div>';
-      document.body.appendChild(zohoDialog);
+      const requestsDialog = document.createElement("dialog");
+      requestsDialog.className = "fg-requests-dialog";
+      requestsDialog.setAttribute("aria-label", "Modulo richieste Fly Gym");
+      requestsDialog.innerHTML = '<div class="fg-requests-dialog-shell"><button class="fg-requests-dialog-close" type="button" aria-label="Chiudi il modulo">×</button><div class="fg-requests-dialog-content" data-flygym-requests><p class="fg-requests-loading">Caricamento modulo Fly Gym…</p></div></div>';
+      document.body.appendChild(requestsDialog);
 
-      const zohoCloseButton = zohoDialog.querySelector(".fg-zoho-dialog-close");
+      const requestsCloseButton = requestsDialog.querySelector(".fg-requests-dialog-close");
+      const requestsHost = requestsDialog.querySelector("[data-flygym-requests]");
+      let requestsScriptLoaded = false;
+
+      function loadRequestsForm() {
+        if (requestsScriptLoaded) {
+          return;
+        }
+
+        requestsScriptLoaded = true;
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src = "https://flygym-app.onrender.com/requests-embed.mjs";
+        script.addEventListener("load", function () {
+          const loadingMessage = requestsHost.querySelector(".fg-requests-loading");
+          if (loadingMessage) {
+            loadingMessage.remove();
+          }
+        });
+        script.addEventListener("error", function () {
+          requestsHost.innerHTML = '<p class="fg-requests-fallback">Il modulo non è disponibile in questo momento.<br><a href="https://flygym-app.onrender.com/richieste" target="_blank" rel="noopener">Apri il modulo Fly Gym</a></p>';
+        });
+        document.head.appendChild(script);
+      }
 
       bookingLinks.forEach(function (link) {
         link.addEventListener("click", function (event) {
           event.preventDefault();
+          const parentDialog = link.closest("dialog[open]");
 
-          if (typeof zohoDialog.showModal === "function") {
-            zohoDialog.showModal();
+          if (parentDialog && parentDialog !== requestsDialog) {
+            parentDialog.close();
+          }
+
+          if (typeof requestsDialog.showModal === "function") {
+            requestsDialog.showModal();
             document.body.classList.add("fg-dialog-open");
+            loadRequestsForm();
           }
         });
       });
 
-      zohoCloseButton.addEventListener("click", function () {
-        zohoDialog.close();
+      requestsCloseButton.addEventListener("click", function () {
+        requestsDialog.close();
       });
 
-      zohoDialog.addEventListener("click", function (event) {
-        if (event.target === zohoDialog) {
-          zohoDialog.close();
+      requestsDialog.addEventListener("click", function (event) {
+        if (event.target === requestsDialog) {
+          requestsDialog.close();
         }
       });
 
-      zohoDialog.addEventListener("close", function () {
+      requestsDialog.addEventListener("close", function () {
         if (!document.querySelector("dialog[open]")) {
           document.body.classList.remove("fg-dialog-open");
         }

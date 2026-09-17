@@ -3,15 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Richiesta Fly Gym | Prenota una prova</title>
-  <meta name="description" content="Compila il modulo Fly Gym per richiedere informazioni, prenotare una prova o iscriverti a un corso.">
+  <title>Richieste Fly Gym</title>
+  <meta name="description" content="Invia una richiesta a Fly Gym per prove gratuite, rinnovi, iscrizioni e informazioni.">
   <style>
+    * { box-sizing: border-box; }
     html, body { margin: 0; min-height: 100%; background: #101016; }
-    body { min-height: 100vh; }
-    iframe { display: block; width: 100%; min-height: 100vh; border: 0; background: #101016; }
+    body { min-height: 100vh; color: #f5f5f7; font-family: Arial, Helvetica, sans-serif; }
+    main { width: min(920px, 100%); min-height: 100vh; margin: 0 auto; }
+    [data-flygym-requests] { min-height: 780px; }
+    [data-flygym-requests] > iframe { width: 100% !important; border: 0 !important; border-radius: 0 !important; }
+    .fg-requests-fallback { padding: 48px 24px; text-align: center; }
+    .fg-requests-fallback a { color: #ffd21c; font-weight: 800; }
   </style>
 </head>
 <body>
-  <iframe height="500" width="100%" frameborder="0" allowtransparency="true" scrolling="auto" src="https://creatorapp.zohopublic.eu/info_flygym/flygym/form-embed/Richiesta_FlyGym/us9bpQ6bweK4eadNVCMXs951DywGJDGbOkMXXrzfWOxeg2EeaJZ8H4wzX5CGRpNsueu4dTN3XzuMkmwxj35O26tNx0NY7uE4xjr6?zc_Header=false&amp;zc_BgClr=_101016&amp;zc_BdrClr=_101016&amp;zc_LblFont=Arial&amp;zc_LblFontClr=_f5f5f7&amp;zc_LblFontSize=15px&amp;zc_InpClr=_20202a&amp;zc_InpFieldFont=Arial&amp;zc_InpFieldFontClr=_ffffff&amp;zc_InpFieldFontSize=16px&amp;zc_InpFieldHeight=44px&amp;zc_FtrClr=_101016&amp;zc_BtnBgClr=_ff6f1d&amp;zc_BtnClr=_101016&amp;zc_BtnFont=Arial&amp;zc_BtnFontSize=16px&amp;zc_BtnMovrBgClr=_ff8e4d&amp;zc_BtnMovrClr=_101016" title="Richiesta Fly Gym"></iframe>
+  <main>
+    <div data-flygym-requests></div>
+    <script type="module" src="https://flygym-app.onrender.com/requests-embed.mjs"></script>
+    <noscript>
+      <p class="fg-requests-fallback"><a href="https://flygym-app.onrender.com/richieste" target="_blank" rel="noopener">Apri il modulo Fly Gym</a></p>
+    </noscript>
+  </main>
 </body>
 </html>
