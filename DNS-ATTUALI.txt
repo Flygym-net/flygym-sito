@@ -1,0 +1,24 @@
+RECORD DNS ATTUALI DI FLYGYM.NET (letti il 17 settembre 2026)
+
+Registrar: Wix.com Ltd. - scadenza dominio 30/05/2027
+Nameserver: ns12.wixdns.net, ns13.wixdns.net
+
+SITO (da cambiare per Render)
+flygym.net  A  185.230.63.107 / 185.230.63.171 / 185.230.63.186
+www  CNAME  cdn3.wixdns.net
+
+POSTA ZOHO - DA MANTENERE IDENTICI
+MX  40  mx2.zoho.eu
+MX  10  mx.zoho.eu
+MX  30  mx2.zoho.eu
+MX  50  mx3.zoho.eu
+MX  20  mx2.zoho.eu
+TXT @  v=spf1 include:zoho.eu ~all
+TXT @  google-site-verification=bno-fucSn5ezNAaEfAJuFiqJiT-O_pH_l3hj90ZVKbQ
+TXT @  zoho-verification=zb25957141.zmverify.zoho.eu
+TXT zmail._domainkey  v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC6mQ2qDe23N8IWYi0xpc0fN8nsPlPYtHC5/NTXsDUldoiT87DLu7IGaaBOfdhXuearvCJfldykAN774Zofslg/2ag/pNEnI+MTMCYVTKeAr51tCQX9g0GxZ5yEwBp0XwXsvtH6jgReZGGLuToFFzXOAaVHQe0WlPEALBKix6+I7wIDAQAB
+TXT s1._domainkey  
+TXT s1._domainkey  
+TXT s1._domainkey  k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4Py9qdxOoT2xQy51KVBUi5uK0QzLUFkmdREEbXUZeWg/Ii1ear4elzowyelCOd6hl+e9yVEdoeZorhTVe3bZvt1ForByZRSS7pdR8tKjAZ/yYnVlchVrxDYypk8TFerHG6DjSxAIBBIx8aW9qB4OkILuniDfIISIiAWvp3i306Tr9HV6PThIdK+ruOuASgg/mCLYSR8gt0IMJMg7msLSliErE+6PzxgqzLljirdKlh8d9jgewED353UC4MAqjLnnd5HuCp2a10FuscbfFbg+9uoXIrkKEkclTc8PVG4zRn0clOAGgWAP+cM3h7oXlfusMnPwYi4XRu73u+sy7ooO4QIDAQAB
+TXT _dmarc  
+TXT _dmarc  v=DMARC1; p=none; rua=mailto:dmarc_agg@vali.email
