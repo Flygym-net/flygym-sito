@@ -221,6 +221,19 @@ body {
       cursor: pointer;
     }
 
+    .fg-menu a.fg-nav-login {
+      padding: 9px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 999px;
+      opacity: 1;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .fg-menu a.fg-nav-login:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.6);
+    }
+
     /* HERO */
 
     .fg-hero {
@@ -1466,6 +1479,150 @@ body {
       gap: 18px;
       color: var(--muted);
       font-size: 14px;
+    }
+
+    .fg-footer-legal {
+      max-width: 520px;
+      margin-top: 6px !important;
+      color: rgba(255, 255, 255, 0.35);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .fg-footer-legal a {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .fg-footer-legal a:hover,
+    .fg-footer-legal a:focus-visible {
+      color: var(--white);
+    }
+
+    /* COOKIE BANNER (valori di colore fissi: la pagina che lo ospita puo' non avere le variabili di index.html) */
+
+    .fg-cookie-banner {
+      position: fixed;
+      z-index: 2000;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px 22px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 18px;
+      background: rgba(10, 10, 14, 0.97);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+      font-family: Arial, Helvetica, sans-serif;
+      color: #fff;
+    }
+
+    .fg-cookie-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .fg-cookie-text {
+      flex: 1 1 320px;
+      margin: 0;
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: #b8b8c2;
+    }
+
+    .fg-cookie-text a {
+      color: #fff;
+    }
+
+    .fg-cookie-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .fg-cookie-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 18px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 999px;
+      background: transparent;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .fg-cookie-btn:hover {
+      border-color: rgba(255, 255, 255, 0.6);
+    }
+
+    .fg-cookie-accept {
+      border: 0;
+      background: linear-gradient(90deg, #e62dbb, #ff7a18, #ffb21a);
+    }
+
+    .fg-cookie-accept:hover {
+      filter: brightness(1.08);
+    }
+
+    .fg-cookie-panel {
+      flex-basis: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 6px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .fg-cookie-panel[hidden] {
+      display: none;
+    }
+
+    .fg-cookie-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+    }
+
+    .fg-cookie-option input {
+      margin-top: 3px;
+    }
+
+    .fg-cookie-option small {
+      display: block;
+      margin-top: 2px;
+      color: #b8b8c2;
+      font-weight: 400;
+    }
+
+    .fg-cookie-save {
+      align-self: flex-start;
+    }
+
+    @media (max-width: 600px) {
+      .fg-cookie-banner {
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        padding: 16px;
+      }
+
+      .fg-cookie-actions {
+        width: 100%;
+      }
+
+      .fg-cookie-btn {
+        flex: 1 1 auto;
+      }
     }
 
     .fg-footer-links a:hover,
