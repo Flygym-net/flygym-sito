@@ -45,6 +45,12 @@ body {
   height: auto;
 }
 
+/* I video di sfondo riempiono la loro sezione: senza questo si fermavano all'altezza
+   naturale del filmato, lasciando uno stacco netto a metà dell'inizio pagina. */
+#flygym-home .fg-home-hero-video {
+  height: 100%;
+}
+
 .fg-container {
   width: min(1180px, calc(100% - 48px));
   margin-inline: auto;
@@ -421,15 +427,29 @@ body {
   }
 
   .fg-hero {
-    min-height: 690px;
+    min-height: 600px;
     align-items: flex-end;
     padding-bottom: 55px;
     background-position: center;
     background-size: 260% 260%;
   }
 
+  /* Sul telefono il video è molto ritagliato: inquadratura più alta per tenere dentro l'atleta. */
   .fg-home-hero-video {
-    object-position: center;
+    object-position: center 32%;
+  }
+
+  /* Il video resta visibile fino sotto i pulsanti e solo alla fine sfuma nel nero della sezione dopo. */
+  .fg-home-hero-shade {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(5, 5, 8, 0.34) 0%,
+        rgba(5, 5, 8, 0.5) 40%,
+        rgba(5, 5, 8, 0.72) 74%,
+        rgba(5, 5, 8, 0.9) 93%,
+        #050508 100%
+      );
   }
 
   /* Senza width:100% l'inizio pagina tiene i margini laterali di .fg-container, come le altre sezioni. */
