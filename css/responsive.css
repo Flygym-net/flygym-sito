@@ -1,5 +1,5 @@
-/* =========================================================
-   FLY GYM — RESPONSIVE DESIGN
+﻿/* =========================================================
+   FLY GYM â€” RESPONSIVE DESIGN
    Inserire alla fine del tag <style>
 ========================================================= */
 
@@ -46,7 +46,7 @@ body {
 }
 
 /* I video di sfondo riempiono la loro sezione: senza questo si fermavano all'altezza
-   naturale del filmato, lasciando uno stacco netto a metà dell'inizio pagina. */
+   naturale del filmato, lasciando uno stacco netto a metÃ  dell'inizio pagina. */
 #flygym-home .fg-home-hero-video {
   height: 100%;
 }
@@ -66,7 +66,7 @@ body {
 }
 
 /* =========================================================
-   DESKTOP GRANDE — oltre 1400 px
+   DESKTOP GRANDE â€” oltre 1400 px
 ========================================================= */
 
 @media screen and (min-width: 1400px) {
@@ -94,7 +94,7 @@ body {
 }
 
 /* =========================================================
-   TABLET E NOTEBOOK — fino a 1100 px
+   TABLET E NOTEBOOK â€” fino a 1100 px
 ========================================================= */
 
 @media screen and (max-width: 1100px) {
@@ -162,7 +162,7 @@ body {
 }
 
 /* =========================================================
-   TABLET VERTICALE — fino a 820 px
+   TABLET VERTICALE â€” fino a 820 px
 ========================================================= */
 
 @media screen and (max-width: 820px) {
@@ -353,7 +353,7 @@ body {
 }
 
 /* =========================================================
-   SMARTPHONE — fino a 600 px
+   SMARTPHONE â€” fino a 600 px
 ========================================================= */
 
 @media screen and (max-width: 600px) {
@@ -434,7 +434,7 @@ body {
     background-size: 260% 260%;
   }
 
-  /* Sul telefono il video è molto ritagliato: inquadratura più alta per tenere dentro l'atleta. */
+  /* Sul telefono il video Ã¨ molto ritagliato: inquadratura piÃ¹ alta per tenere dentro l'atleta. */
   .fg-home-hero-video {
     object-position: center 32%;
   }
@@ -879,7 +879,7 @@ body {
 }
 
 /* =========================================================
-   SMARTPHONE PICCOLI — fino a 380 px
+   SMARTPHONE PICCOLI â€” fino a 380 px
 ========================================================= */
 
 @media screen and (max-width: 380px) {
@@ -913,7 +913,7 @@ body {
 }
 
 /* =========================================================
-   ACCESSIBILITÀ E ORIENTAMENTO
+   ACCESSIBILITÃ€ E ORIENTAMENTO
 ========================================================= */
 
 @media screen and (orientation: landscape) and (max-height: 550px) {
@@ -948,7 +948,7 @@ body {
 }
 
 /* =========================================================
-   CARD PERCORSI CON IMMAGINI — override finali
+   CARD PERCORSI CON IMMAGINI â€” override finali
 ========================================================= */
 @media screen and (min-width: 1400px) {
   .fg-card,
@@ -1004,7 +1004,7 @@ body {
 
 
 /* =========================================================
-   CARD PERCORSI — UNIFORMITÀ E ZOOM
+   CARD PERCORSI â€” UNIFORMITÃ€ E ZOOM
 ========================================================= */
 
 @media screen and (min-width: 1400px) {
@@ -1083,3 +1083,12 @@ body {
     transform: scale(1.08);
   }
 }
+
+/* Copertina Pilates: sul telefono l'immagine non va ingrandita come i video */
+@media screen and (max-width: 600px) {
+  .fg-course-page img.fg-course-hero-video {
+    transform: translate(-50%, -50%) scale(1.45);
+    object-position: 72% 30%;
+  }
+}
+
