@@ -432,8 +432,8 @@ body {
     object-position: center;
   }
 
+  /* Senza width:100% l'inizio pagina tiene i margini laterali di .fg-container, come le altre sezioni. */
   .fg-hero-content {
-    width: 100%;
     padding-top: 105px;
   }
 
@@ -646,7 +646,6 @@ body {
   .fg-artistic-page .fg-course-hero-content {
     position: relative;
     z-index: 1;
-    width: 100%;
   }
 
   .fg-pilates-page .fg-course-hero-video {
